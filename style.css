@@ -292,7 +292,7 @@ nav ul li a:hover::after {
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
-    color: #343434;
+    color: #00ADDB;
     transition: background 0.5s; /* the background text may not be necessary, but not sure  */
 } 
 
@@ -342,7 +342,7 @@ nav ul li a:hover::after {
 
 .btn.btn2 {
     display: inline-block;
-    background:#223d4b;
+    background:#00ADDB;
 }
 
 /* Right side */

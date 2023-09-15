@@ -17,14 +17,14 @@ body {
 
 #header {
     width: 100%;
-    height: 100vh;
-    /*background-image: url(images/polygons.png); ignore for now */
-    background-size: cover;
-    background-position: center;
+    /* height: 100vh; ignore for now  */
+    /* background-image: url(images/polygons.png); */
+    /* background-size: cover; */
+    /* background-position: center; */
 }
 
 .container {
-    padding: 10px 10%;
+    padding: 30px 10%;
 }
 
 nav {
@@ -51,7 +51,7 @@ nav ul li a {
     position: relative;
 }
 
-nav ul li a::after {
+nav ul li a::after { /* this is the default state of blue line highlight effect */
     content: '';
     width: 0%;
     height: 3px;
@@ -60,14 +60,16 @@ nav ul li a::after {
     left: 0;
     bottom: -6px;
     transition: 0.5s;
+    border-radius: 15px;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after { /* this is on hover state of blue line highlight effect */
     width: 100% ;
 }
 
 .header-text { 
     margin-top: 20%;
+    margin-bottom: 20%; /* adjustment for line 20 */
     font-size: 30px;
 }
 
@@ -128,6 +130,13 @@ nav ul li a:hover::after {
     cursor: pointer;
     position: relative;
 }
+.tab-links-nav { /* for navig */
+    margin-right: 0px;
+}
+
+.tab-links-nav.active-link::after {
+    width: 100%;
+}
 
 .tab-links::after {
     content: '';
@@ -138,6 +147,7 @@ nav ul li a:hover::after {
     left: 0;
     bottom: -8px;
     transition: 0.5s;
+    border-radius: 15px;
 }
 
 .tab-links.active-link::after {
@@ -167,7 +177,7 @@ nav ul li a:hover::after {
 /* MY SERVICES Section */
 
 #services {
-    padding: 30px 0;
+    /* padding: 30px 0; -- disable for now as it messes up the alignment */
 }
 
 .container h1 span  {
@@ -293,7 +303,7 @@ nav ul li a:hover::after {
     border-radius: 6px;
     text-decoration: none;
     color: #00ADDB;
-    transition: background 0.5s; /* the background text may not be necessary, but not sure  */
+    transition: background 0.5s;  /* transition effect */
 } 
 
 .btn:hover {
@@ -342,7 +352,11 @@ nav ul li a:hover::after {
 
 .btn.btn2 {
     display: inline-block;
-    background:#00ADDB;
+    /* background:#00ADDB; --- I disabled it for the effect*/
+}
+
+.btn2 {
+    background-color: transparent;
 }
 
 /* Right side */
@@ -389,24 +403,26 @@ nav .fa-solid {
 }
 
 @media only screen and (max-width: 820px) { /* for screens with 600px or less */
+    
     #header {
-        background-image: url(images/polygons.png);
+       /*  height: 50vh; -- background-image: url(images/polygons.png); -- hide bg image */
     }
     .header-text {
-        margin-top: 100%;
-        color: azure;
+        margin-top: 20%;
+        color: #223d4b;
         font-size: 16px;
     }
     .header-text h1 {
         font-size: 30px;
     }
+
     nav .fa-solid {
         display: block; /* -- SHOW the Menu and Close Icons in SMALL screen -- */
         font-size: 25px;
-        color: azure;
+        color: #3EC7FF;
     }
     nav ul { /* -- this arranges the navigation menu to the right -- */
-        background:#00ADDB;
+        background:#223d4b;
         position: fixed;
         top: 0;
         right: -200px; /* this is to hide the mobile menu */
@@ -420,12 +436,29 @@ nav .fa-solid {
         display: block;
         margin: 25px;
     }
+    nav ul li a {
+        color: white;
+    }
+
+    nav ul li a::after { /* this is the default state of blue line highlight effect */
+        content: '';
+        width: 0%;
+        height: 3px;
+        background: #3EC7FF;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+        border-radius: 15px;
+    }
+
     nav ul .fa-solid {
         position: absolute;
         top: 25px;
         left: 25px;
         cursor: pointer; /* I think optional because mobile device for this screen -- */
     }
+    
 
     /* Mobile ABOUT section */
 
